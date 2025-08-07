@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BFZPLCQKG"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-9BFZPLCQKG');
@@ -84,13 +84,24 @@
             </ul>
 
             <!-- Start vetstoria embed code -->
-            <vetstoria-widget initial-posts-per-page="9" initial-widget-title="This is a demo widget"></vetstoria-widget>
+            <vetstoria-widget initial-posts-per-page="9"
+                initial-widget-title="This is a demo widget"></vetstoria-widget>
             <script src="https://demo-widget-server.netlify.app/wc/vetstoria-widget.min.js"></script>
             <!-- End vetstoria embed code -->
         </div>
     </main>
 
     <script>
+        /**
+            * The following event is sent when the page loads. You could
+            * wrap the event in a JavaScript function so the event is
+            * sent when the user performs some action.
+        */
+        gtag('event', 'screen_view', {
+            'app_name': 'vetstoria_widget',
+            'screen_name': 'Home'
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const widget = document.querySelector('vetstoria-widget');
 
