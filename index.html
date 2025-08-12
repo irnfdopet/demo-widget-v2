@@ -122,33 +122,33 @@
         //     'screen_name': 'Home'
         // });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const widget = document.querySelector('vetstoria-widget');
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const widget = document.querySelector('vetstoria-widget');
 
-            if (widget) {
-                widget.addEventListener('widget-ga-interaction', (e) => {
-                    console.log('Event from widget: ', e.detail);
+        //     if (widget) {
+        //         widget.addEventListener('widget-ga-interaction', (e) => {
+        //             console.log('Event from widget: ', e.detail);
 
-                    // Make sure detail is an array and has at least one element
-                    if (Array.isArray(e.detail) && e.detail.length > 0) {
-                        const { action = 'unknown_action', label = 'unknown_label' } = e.detail[0];
+        //             // Make sure detail is an array and has at least one element
+        //             if (Array.isArray(e.detail) && e.detail.length > 0) {
+        //                 const { action = 'unknown_action', label = 'unknown_label' } = e.detail[0];
 
-                        // Send the event to Google Analytics
-                        console.log('Sending event to Google Analytics:', action, label);
-                        gtag('event', action, {
-                            'event_category': 'vetstoria_widget',
-                            'event_label': label
-                        });
+        //                 // Send the event to Google Analytics
+        //                 console.log('Sending event to Google Analytics:', action, label);
+        //                 gtag('event', action, {
+        //                     'event_category': 'vetstoria_widget',
+        //                     'event_label': label
+        //                 });
 
-                        console.log(`Event sent: ${action} - ${label}`);
-                    } else {
-                        console.warn('Unexpected event detail format:', e.detail);
-                    }
-                });
-            } else {
-                console.error('vetstoria-widget element not found.');
-            }
-        });
+        //                 console.log(`Event sent: ${action} - ${label}`);
+        //             } else {
+        //                 console.warn('Unexpected event detail format:', e.detail);
+        //             }
+        //         });
+        //     } else {
+        //         console.error('vetstoria-widget element not found.');
+        //     }
+        // });
     </script>
 </body>
 
