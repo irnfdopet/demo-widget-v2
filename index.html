@@ -109,6 +109,8 @@
 
             <button id="vg-btn-1">Test VG Button</button>
 
+            <button id="vg-btn-2">Test VG Button 2</button>
+
             <!-- Start vetstoria embed code -->
             <vetstoria-widget initial-posts-per-page="9"
                 initial-widget-title="This is a demo widget"></vetstoria-widget>
@@ -151,6 +153,20 @@
         //         console.error('vetstoria-widget element not found.');
         //     }
         // });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const button2 = document.getElementById('vg-btn-2');
+
+            if (button2) {
+                button2.addEventListener('click', () => {
+                    console.log('Button 2 clicked');
+                    dataLayer.push({'event': 'Client site Button 2 clicked'})
+                });
+            } else {
+                console.error('Button 2 not found');
+            }
+        });
     </script>
 </body>
 
